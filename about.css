@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@500&display=swap');
+
+:root {
+    --dark: #374151;
+    --darker: #1F2937;
+    --darkest: #111827;
+    --gray: #6B7280;
+    --light: #EEE;
+    --pink: #EC4899;
+    --purple: #8bacf6;
+    --yellow: #f5b935;
+    --green: #85C88A;
+    --blue: #6FB2D2;
+    --cream: #FAD9A1;
+    --orange: #FF9551;
+    --blueSky: #0096FF;
+    --alphaBlue: #72FFFF;
+    --lightBlue: #89CFFD;
+    --darkBlue: #002B5B;
+    --fadeBlue: #2B4865;
+    --waterBlue: #256D85;
+    --betaBlue: #8FE3CF;
+    --redOrange: #FF4A4A;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans Thai' ,sans-serif;
+    font-size: auto;
+}
+
+html, body {
+    height: 100%;
+}
+
+span a:hover {
+    color: var(--light);
+    transition-property: transform;
+    transition-duration: 1s;
+    transition: 0.7s;
+    transform: scale(1.1, 1.1);
+    transform-origin: center top;
+    transform-style: flat;
+}
+
+span i:hover {
+    color: white;
+    transition-property: transform;
+    transition-duration: 1s;
+    transition: 0.7s;
+    transform: scale(1.1, 1.1);
+    transform-origin: center top;
+    transform-style: flat;
+}
+
+span a {
+    text-decoration: none;
+    color: yellow;
+    display: rerative;
+}
+
+span i {
+    color: red;
+}
+
+.intel {
+    color: var(--lightBlue);
+}
+
+.copyright {
+    text-align: center;
+    background-color: #100b43;
+    color: white    ;
+}
+
+
+/*Nav Bar*/
+
+.navbar-logo {
+    position: relative;
+    color: #222;
+}
+
+.navbar-logo::before {
+    content: attr(data-text);
+    position: absolute;
+    color: var(--lightBlue);
+    width: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: animate 1s linear infinite;
+    filter: drop-shadow(0 0 5px var(--light)); drop-shadow(0 0 8px var(--alphaBlue))
+}
+
+@keyframes animate {
+    0%, 10%, 100% {
+        width: 0;
+    }
+   80%, 90%{
+        width: 50%;
+    }
+}
+
+.navbar ul {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    background-color: var(--darkest);
+    color: white;
+}
+
+.navbar li {
+    list-style-type: none;
+    padding: 0.8rem;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-links h5 {
+    flex: 1;
+    font-size:10%;
+    user-select: none;
+    font-family: 'Noto Serif', serif;
+}
+
+.navbar-logo {
+    flex: 1;
+    font-size: 1.5rem;
+    user-select: none;
+    font-family: 'Noto Serif', serif;
+}
+
+.navbar-toggle {
+    display: none;
+}
+
+.navbar-links:hover {
+    color: var(--blue);
+    font-size: 1.7rem;
+    font-weight: 100;
+    background-image: linear-gradient(to right, var(--betaBlue),var(--waterBlue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    transform: scale(1.1, 1.1);
+    transition: 0.7s;
+    transform-origin: center top;
+}
+
+navbar-links {
+    opacity: 0.8;
+    transform-origin: center top;
+    transition-property: transform;
+    transition-duration: 1s;
+    transition: 0.7s;
+}
+
+navbar-links:hover {
+    opacity: 0.6;
+    transition-property: transform;
+    transition-duration: 1s;
+    transition: 0.7s;
+    transform: scale(1.1, 1.1);
+    transform-origin: center top;
+    transform-style: flat;
+}
+
+@media (max-width: 600px) {
+    .navbar ul {
+        flex-wrap: wrap;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-links {
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .active {
+        display: block;
+    }
+}
+
+/*-------------------------*/
+
+.container {
+    height: 100%;
+    background: url('intelEvo2.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container span {
+    display: grid;
+    color: var(--light);
+    font-size: 3vw;
+    font-family: 'Noto Sans Thai Looped', sans-serif;
+    font-family: 'Noto Serif', serif;
+    text-align: center;
+    text-transform: uppercase;
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container p {
+    color: var(--light);
+    text-align: center;
+    position: relative;
+    
+}
+
+@media(max-width: 600px){
+    .container {
+    height: 100%;
+    background: url('intelEvo2.jpg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+

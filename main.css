@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@1,700&display=swap');
+
+:root {
+    --dark: #374151;
+    --darker: #1F2937;
+    --darkest: #111827;
+    --gray: #6B7280;
+    --light: #EEE;
+    --pink: #EC4899;
+    --purple: #8bacf6;
+    --yellow: #f5b935;
+    --green: #85C88A;
+    --blue: #6FB2D2;
+    --cream: #FAD9A1;
+    --orange: #FF9551;
+    --blueSky: #0096FF;
+    --alphaBlue: #72FFFF;
+    --lightBlue: #89CFFD;
+    --darkBlue: #002B5B;
+    --fadeBlue: #2B4865;
+    --waterBlue: #256D85;
+    --betaBlue: #8FE3CF;
+    --red: #FF4A4A;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans Thai' ,sans-serif;
+    font-size: auto;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--dark);
+    color: #FFF;
+}
+
+/*Nav Bar*/
+
+.navbar-logo {
+    position: relative;
+    color: #222;
+}
+
+.navbar-logo::before {
+    content: attr(data-text);
+    position: absolute;
+    color: var(--lightBlue);
+    width: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: animate 1s linear infinite;
+    filter: drop-shadow(0 0 5px var(--light)); drop-shadow(0 0 8px var(--alphaBlue))
+}
+
+@keyframes animate {
+    0%, 10%, 100% {
+        width: 0;
+    }
+   80%, 90%{
+        width: 50%;
+    }
+}
+
+.navbar ul {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    background-color: var(--darkest);
+    color: white;
+}
+
+.navbar li {
+    list-style-type: none;
+    padding: 0.8rem;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-links h5 {
+    flex: 1;
+    font-size:10%;
+    user-select: none;
+    font-family: 'Noto Serif', serif;
+}
+
+.navbar-logo {
+    flex: 1;
+    font-size: 1.5rem;
+    user-select: none;
+    font-family: 'Noto Serif', serif;
+}
+
+.navbar-toggle {
+    display: none;
+}
+
+.navbar-links:hover {
+    color: var(--blue);
+    font-size: 1.7rem;
+    font-weight: 100;
+    background-image: linear-gradient(to right, var(--betaBlue),var(--waterBlue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    transform: scale(1.1, 1.1);
+    transition: 0.7s;
+    transform-origin: center top;
+}
+
+navbar-links {
+    opacity: 0.8;
+    transform-origin: center top;
+    transition-property: transform;
+    transition-duration: 1s;
+    transition: 0.7s;
+}
+
+navbar-links:hover {
+    opacity: 0.6;
+    transition-property: transform;
+    transition-duration: 1s;
+    transition: 0.7s;
+    transform: scale(1.1, 1.1);
+    transform-origin: center top;
+    transform-style: flat;
+}
+
+@media (max-width: 600px) {
+    .navbar ul {
+        flex-wrap: wrap;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-links {
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .active {
+        display: block;
+    }
+}
+
+/*-------------------------*/
+
+#Evo {
+    padding-top: 3rem;
+}
+
+header {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--gray);
+    margin-bottom: 1rem;
+}
+
+#new-todo-form {
+    display: flex;
+}
+
+input ,button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+#new-todo-input {
+    flex: 1 1 0%;
+    background-color: var(--darker);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    color: var(--light);
+    font-size: 1.25rem;
+} 
+
+#new-todo-form::placeholder {
+    color: var(--gray);
+}
+
+#new-todo-submit {
+    color: var(--yellow);
+    font-size: 1.25rem;
+    font-weight: 700;
+    background-image: linear-gradient(to right, var(--lightBlue),var(--alphaBlue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    transition:0.4s;
+}
+
+#new-todo-submit:hover {
+  opacity:0.8;
+}
+
+#new-todo-submit:active {
+  opacity:0.6;
+}
+
+main {
+  flex: 1 1 0%;
+  padding: 2rem 1ram;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.todo-list {
+  padding: 1rem;
+}
+
+.todo-list h2 {
+  font-size: 1.5rem;
+  font-widht: 300;
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+#todos .todo {
+  display: flex;
+  justify-concent: space-between;
+  background: var(--darkest);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+#todos .todo .content {
+    flex: 1 1 0%;
+}
+
+#todos .todo .content .text {
+  color: var(--light);
+  font-size: 1.25rem;
+  width: 100%;
+  display: block;
+  transition: 0.4s;
+}
+
+#todos .todo .content .text:not(:read-only) {
+  color: var(--blueSky);
+}
+
+#todos .todo .actions {
+  display: flex;
+  margin: 0 -0.5rem;
+}
+
+.todo .actions button {
+  cursor: pointer;
+  margin: 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-tranform: uppercase;
+  transition: 0.4s;
+}
+
+.todo .actions button:hover {
+  opacity: 0.8;
+}
+
+.todo .actions button:active {
+  opacity: 0.6;
+}
+
+.todo .actions .edit {
+  background-image: linear-gradient(to right, var(--lightBlue),var(--blue),var(--alphaBlue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.todo .actions .delete {
+  color: crimson;
+}
+
+#Evo2 {
+    width: 20%;
+    height: 5%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 50%;
+    padding-bottom: 1%;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+}
+
